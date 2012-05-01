@@ -29,7 +29,11 @@ public class Translator {
 		String output = "";
 		
 		for(int i=0; i<input.length(); i++){
-			output += Integer.toBinaryString((int)input.charAt(i)) + " ";
+			String bite = Integer.toBinaryString((int)input.charAt(i));
+			while(bite.length()<8){
+				bite = "0" + bite;
+			}
+			output += bite + " ";
 		}
 		
 		return output.trim();
